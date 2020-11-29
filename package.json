@@ -4,10 +4,10 @@
   "description": "Download stories from Literotica and save them locally as beautifully formatted Text or  HTML web pages for later reading. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node index.js -e html -u "
   },
   "bin": {
-    "litero_getstory": "./index.js"
+    "litero_getstory": "index.js"
   },
   "repository": {
     "type": "git",
