@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "download": "node index.js -e html -u ",
-    "test":"jest --watch"
+    "test": "jest --watch"
   },
   "bin": {
     "litero_getstory": "index.js"
@@ -31,6 +31,7 @@
   "homepage": "https://github.com/openone/litero#readme",
   "dependencies": {
     "@types/jest": "^26.0.15",
+    "axios": "^0.21.0",
     "cheerio": "0.20.0",
     "minimist": "1.2.0",
     "unique-random-array": "1.0.0"
