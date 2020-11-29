@@ -1,0 +1,1 @@
+%title%%posttitle%%author%%precontent%%content%%postcontent%%footer%
