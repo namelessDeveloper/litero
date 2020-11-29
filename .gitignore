@@ -51,3 +51,6 @@ Icon
 
 # Thumbnails
 ._*
+
+# Donwload location for when run via node instead of npx
+/downloads

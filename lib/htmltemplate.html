@@ -66,47 +66,6 @@
         opacity: 0.3;
     }
 
-    .js #switch-color-scheme:hover {
-        opacity : 1;
-        -webkit-transition: opacity 0.5s ease-in-out;
-        -moz-transition: opacity 0.5s ease-in-out;
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    .js #switch-color-scheme a {
-        text-indent : -100000px;
-        display : block;
-        float: left;
-        text-decoration : none;
-        border : none;
-    }
-
-    .js #switch-color-scheme a:before {
-        content: 'Aa';
-        text-indent: 0;
-        float: left;
-        border: 1px solid #AAA;
-        padding: 7px;
-        display : none;
-        margin : 5px;
-        border-radius:50px;
-    }
-
-    .js #switch-color-scheme a[rel=light]:before {
-        background : #D6D6D6;
-        color : #222;
-    }
-
-    .js #switch-color-scheme a[rel=dark]:before {
-        background : #252525;
-        color : #EEE;
-    }
-
-    .js #switch-color-scheme a[rel=sepia]:before {
-        background : #CFC5AD;
-        color : #323232;
-    }
-
     .light .light:before,
     .dark .dark:before,
     .sepia .sepia:before {
@@ -130,7 +89,12 @@
     }
     </style>
   </head>
-  <body>
+  <body class="js dark">
+    <div id="switch-color-scheme">
+        <a href="#" class="switch-color light" onclick="toggleTheme('light')">Light</a>
+        <a href="#" class="switch-color dark" onclick="toggleTheme('dark')">Dark</a>
+        <a href="#" class="switch-color sepia" onclick="toggleTheme('sepia')">sepia</a>
+    </div>
     <div id="wrapper">
       <header>
         <h1>%title%</h1>
@@ -142,32 +106,15 @@
       </article>
           %postcontent%
       <footer>
-                  <hr>
-                  %footer% | 
-                  by <a href="http://www.nullrefer.com?https://github.com/openone/litero">Litero - Literotica Story Downloader</a>
+        <hr>
+        %footer% | 
+        by <a href="https://github.com/namelessDeveloper/litero">Litero - Literotica Story Downloader</a>
       </footer>
     </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <!-- <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script> -->
   <script type="text/javascript">
-        jQuery( '<div id="switch-color-scheme" />' )
-                .append( '<a href="#" class="switch-color light" rel="light">Light</a>' )
-                .append( '<a href="#" class="switch-color dark" rel="dark">Dark</a>' )
-                .append( '<a href="#" class="switch-color sepia" rel="sepia">sepia</a>' )
-                .prependTo('body');
-
-        jQuery( document ).ready(function() {
-                jQuery( 'body' ).addClass( 'js light' );
-                jQuery( '#switch-color-scheme a').click( function( e ) {
-                        e.preventDefault();
-                        jQuery( 'body' )
-                                .removeClass('dark light sepia' )
-                                .addClass( jQuery( this ).attr('rel') );
-                });     
-
-        });
-
+    function toggleTheme(theme) {
+        document.body.className = theme
+    }
   </script>
  </body>
         
