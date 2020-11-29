@@ -22,7 +22,7 @@ var litero = require('./lib/litero.js'),
     });
 
 if ( argv.help || ! argv.url ) {
-    return console.log(require('./lib/usage.js').usage);
+    return console.log(require('./lib/usage.js'));
 }
 if ( argv.version )
     return console.log( require('./package').version);
